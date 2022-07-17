@@ -13,10 +13,10 @@ export default function TodoList() {
             </ul> */}
 
             <ul>
-                <TodoListItem>Clean your room</TodoListItem>
-                <TodoListItem>Go shopping</TodoListItem>
-                <TodoListItem>Learn React</TodoListItem>
-                <TodoListItem>Learn class components</TodoListItem>
+                <TodoListItem color="red">Clean your room</TodoListItem>
+                <TodoListItem color="blue">Go shopping</TodoListItem>
+                <TodoListItem color="pink">Learn React</TodoListItem>
+                <TodoListItem color="green">Learn class components</TodoListItem>
             </ul>
         </>
     );
