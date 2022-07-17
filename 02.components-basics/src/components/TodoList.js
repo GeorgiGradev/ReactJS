@@ -12,7 +12,7 @@ function TodoList() {
                 <TodoListItem>{count}</TodoListItem>
             </ul>
 
-            <button onClick={() => setCount(count + 1)}>Modify</button>
+            <button onClick={() => setCount(count++)}>+</button>
         </>
     );
 };
