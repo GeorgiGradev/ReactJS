@@ -1,23 +1,20 @@
+import { useState } from "react";
 import TodoListItem from "./TodoListItem";
 
-export default function TodoList() {
+function TodoList() {
+    let [count, setCount] = useState(0);
+
     return (
         <>
             <h2>Tasks</h2>
 
-            {/* <ul>
-                <TodoListItem text="Clean your room" />
-                <TodoListItem text="Go shopping" />
-                <TodoListItem text="Learn React" />
-                <TodoListItem text="Learn class components" />
-            </ul> */}
-
             <ul>
-                <TodoListItem color="red">Clean your room</TodoListItem>
-                <TodoListItem color="blue">Go shopping</TodoListItem>
-                <TodoListItem color="pink">Learn React</TodoListItem>
-                <TodoListItem color="green">Learn class components</TodoListItem>
+                <TodoListItem>{count}</TodoListItem>
             </ul>
+
+            <button onClick={() => setCount(count + 1)}>Modify</button>
         </>
     );
 };
+
+export default TodoList;
