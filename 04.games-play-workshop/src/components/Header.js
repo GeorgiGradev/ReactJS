@@ -1,19 +1,28 @@
-import { Link, NavLink } from 'react-router-dom';
-import './Header.css';
+const Header = ({
+    navigationChangeHandler,
+}) => {
+    const onHeaderClick = (e) => {
+        e.preventDefault();
 
-const Header = () => {
+        if (e.target.tagName == 'A') {
+            let url = new URL(e.target.href);
+            
+            navigationChangeHandler(url.pathname)
+        }
+    };
+    
     return (
-        <header>
-            <h1><NavLink className="home" to="/">GamesPlay</NavLink></h1>
+        <header onClick={onHeaderClick}>
+            <h1><a className="home" href="/home">GamesPlay</a></h1>
             <nav>
-                <NavLink activeClassName="active-navigation-link" to="/games">All games</NavLink>
+                <a href="/games">All games</a>
                 <div id="user">
-                    <NavLink activeClassName="active-navigation-link" to="/create-game">Create Game</NavLink>
-                    <NavLink activeClassName="active-navigation-link" to="/logout">Logout</NavLink>
+                    <a href="/create-game">Create Game</a>
+                    <a href="/logout">Logout</a>
                 </div>
                 <div id="guest">
-                    <NavLink activeClassName="active-navigation-link" to="/login">Login</NavLink>
-                    <NavLink activeClassName="active-navigation-link" to="/register">Register</NavLink>
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
                 </div>
             </nav>
         </header>

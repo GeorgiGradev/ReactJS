@@ -1,22 +1,7 @@
-import { useHistory } from 'react-router-dom';
-
-const Login = ({
-    history
-}) => {
-    let historyHook = useHistory();
-
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-
-        // TODO: Login
-
-        history.push('/')
-        // historyHook.push('/games');
-    };
-    
+const Login = () => {
     return (
         <section id="login-page" className="auth">
-            <form id="login" onSubmit={onFormSubmit}>
+            <form id="login">
 
                 <div className="container">
                     <div className="brand-logo"></div>

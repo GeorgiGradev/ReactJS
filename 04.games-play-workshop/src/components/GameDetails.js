@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+
 import * as gameService from '../services/gameService';
 
-const GameDetails = ({ match, }) => {
+const GameDetails = ({
+    id
+}) => {
     const [game, setGame] = useState({});
 
     useEffect(async () => {
-        let result = await gameService.getOne(match.params.gameId);
+        let result = await gameService.getOne(id);
 
         setGame(result);
     }, []);
